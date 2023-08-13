@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>k2d</Name>
+  <Repository>portainer/k2d:1.0.0-alpha</Repository>
+  <Registry>https://hub.docker.com/r/portainer/k2d</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://docs.k2d.io</Support>
+  <Project>https://k2d.io</Project>
+  <Overview>A real-time Kubernetes API translator for the edge!&#xD;
+&#xD;
+k2d is a container that runs on a Docker Host, and this container listens on port 6443 for Kubernetes API calls. When the container receives Kubernetes API calls, k2d parses and translates them into Docker API instructions, which it executes on the underlying Docker Host.&#xD;
+&#xD;
+Use of the host network is not mandatory. Using the bridge network is supported:&#xD;
+K2D_ADVERTISE_ADDR must be specified when using the bridge network&#xD;
+Docker Desktop for Mac and Docker Desktop for Windows do not support HOST network, so you must use bridge network if testing on these platforms.</Overview>
+  <Category>Cloud: Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://www.gitbook.com/cdn-cgi/image/width=256,dpr=2,height=40,fit=contain,format=auto/https%3A%2F%2F2749728251-files.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FcAWjziwbITj81T8uUbM6%252Flogo%252F5SJQUebwjscojaqsZgsW%252Fblack.jpg%3Falt%3Dmedia%26token%3Dcf1472a3-c5a8-4609-8156-57ecdf7cbf08</Icon>
+  <ExtraParams>--restart always</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1691933064</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="K2D_ADVERTISE_ADDR" Target="K2D_ADVERTISE_ADDR" Default="" Mode="" Description="Use the K2D_ADVERTISE_ADDR only if you have multiple net interfaces at the OS level" Type="Variable" Display="always" Required="false" Mask="false">YOUR_HOST_IP</Config>
+  <Config Name="K2D_SECRET" Target="K2D_SECRET" Default="" Mode="" Description="The K2D_SECRET is used as an authentication token to call k2d APIs:&#13;&#10;If the K2D_SECRET environment variable is not set, it will be automatically generated, and you can retrieve it in the k2d container logs" Type="Variable" Display="always" Required="false" Mask="false">YOUR_OWN_SECRET</Config>
+  <Config Name="/var/run/docker.sock" Target="/var/run/docker.sock" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="Persistence" Target="/var/lib/k2d" Default="/mnt/user/cache/k2d" Mode="rw" Description="The /var/lib/k2d path must be persisted for:&#13;&#10;SSL certificates&#13;&#10;Secrets&#13;&#10;Configmaps&#13;&#10;Kubernetes Token" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/cache/k2d</Config>
+</Container>

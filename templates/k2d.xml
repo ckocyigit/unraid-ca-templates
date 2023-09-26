@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>k2d</Name>
-  <Repository>portainer/k2d:1.0.0-alpha</Repository>
+  <Repository>portainer/k2d:1.0.0-beta</Repository>
   <Registry>https://hub.docker.com/r/portainer/k2d</Registry>
   <Network>host</Network>
   <MyIP/>
